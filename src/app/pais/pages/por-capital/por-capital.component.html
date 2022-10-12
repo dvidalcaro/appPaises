@@ -1,0 +1,30 @@
+<h2>Por Capital</h2>
+<hr>
+
+
+<div class="row">
+
+    <div class="col">
+       <app-pais-input
+        placeholder="Buscar por capital..."
+        (onEnter)="buscar($event)"
+        (onDebounce)="sugerencia( $event )">
+        
+    </app-pais-input>
+       
+        <!-- <button  (click)="showAbaut()">Mostrar about</button> -->
+    </div>
+</div>
+<hr>
+
+<!-- <p >{{aboutRest.description}}</p> -->
+
+<div class="alert alert-danger" *ngIf="hayError">
+    No se encontro nada con el termino de {{termino}}
+</div>
+
+<div *ngIf="paises.length > 0 " class="row">
+    <div class="col">
+       <app-pais-tabla [paises]="paises"></app-pais-tabla>
+    </div>
+</div>
