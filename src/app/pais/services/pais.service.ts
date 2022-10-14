@@ -21,7 +21,7 @@ buscarPais(termino: string):  Observable <Country[]>
 }
 
 buscarCapital(termino: string): Observable <Country[]>{
-  const url =`${this.apiUrl}/alpha/${termino}`;
+  const url =`${this.apiUrl}/capital/${termino}`;
   return this.http.get<Country[]>(url);
 
 
@@ -30,6 +30,13 @@ buscarCapital(termino: string): Observable <Country[]>{
 getPaisPorAlpha(id: string): Observable <Country>{
   const url =`${this.apiUrl}/alpha/${id}`;
   return this.http.get<Country>(url);
+
+
+}
+
+getPaisPorRegion(codBloc: string): Observable <Country[]>{
+  const url =`${this.apiUrl}/regionalbloc/${codBloc}`;
+  return this.http.get<Country[]>(url);
 
 
 }
