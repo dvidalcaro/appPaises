@@ -15,6 +15,37 @@
         <!-- <button  (click)="showAbaut()">Mostrar about</button> -->
     </div>
 </div>
+
+<ul class="list-group" 
+    *ngIf="mostrarSugerencia">
+    <li 
+    *ngFor="let pais of paisesSugeridos"
+    class="list-group-item list-group-item-action">
+
+        <a [routerLink]="['/pais' , pais.alpha2Code]" 
+            class="nav-link"
+        >
+            
+            {{pais.name}}
+        </a>
+        
+    </li>
+
+    <li 
+    
+    class="list-group-item list-group-item-action">
+
+        <a  
+        (click)="buscarSugerido(termino)"
+            class="nav-link"
+        >
+            
+           Buscar "{{termino}}" 
+        </a>
+        
+    </li>
+
+</ul>
 <hr>
 
 <!-- <p >{{aboutRest.description}}</p> -->
